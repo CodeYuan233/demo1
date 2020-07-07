@@ -1,296 +1,291 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
-    <meta charset="UTF-8">
+  <head lang="en">
+    <meta charset="UTF-8" />
     <title></title>
     <style>
-        .wrap{
-            margin:0 auto;
-            margin-top:100px;
-            width:212px;
-            height:340px;
-            position: relative;
+      .wrap {
+        margin: 0 auto;
+        margin-top: 100px;
+        width: 212px;
+        height: 340px;
+        position: relative;
+      }
+      .yellowBody {
+        width: 202px;
+        height: 340px;
+        border-radius: 80px 80px 100px 100px;
+        overflow: hidden;
+        border: 5px solid black;
+        background-color: #fbfe00;
+        position: absolute;
+      }
+      .hair {
+        width: 120px;
+        height: 100px;
+        border-top: 10px solid black;
+        transform: rotate(55deg);
+        border-radius: 70px;
+        position: absolute;
+        top: -38px;
+        left: 10px;
+        z-index: -1;
+      }
+      .hair:before {
+        content: "";
+        width: 60px;
+        height: 50px;
+        border-top: 8px solid black;
+        transform: rotate(-25deg);
+        border-radius: 70px;
+        position: absolute;
+        top: -6px;
+        left: 36px;
+      }
+      .eyesL {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 5px solid black;
+        background-color: white;
+        position: absolute;
+        top: 55px;
+        left: 40px;
+      }
+      .eyesR {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 5px solid black;
+        background-color: white;
+        position: absolute;
+        top: 55px;
+        left: 102px;
+      }
+      .eyesL:before {
+        content: "";
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background-color: black;
+        position: absolute;
+        top: 12px;
+        left: 12px;
+      }
+      .eyesR:before {
+        content: "";
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background-color: black;
+        position: absolute;
+        top: 12px;
+        right: 12px;
+      }
+      .eyesL:after {
+        content: "";
+        width: 46px;
+        height: 20px;
+        background-color: black;
+        transform: rotate(5deg);
+        position: absolute;
+        top: 12px;
+        left: -46px;
+      }
+      .eyesR:after {
+        content: "";
+        width: 46px;
+        height: 20px;
+        background-color: black;
+        transform: rotate(175deg);
+        position: absolute;
+        top: 12px;
+        right: -46px;
+      }
+      .ball1 {
+        content: "";
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: white;
+        position: absolute;
+        top: 12px;
+        left: 22px;
+      }
+      .ball2 {
+        content: "";
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: white;
+        position: absolute;
+        top: 12px;
+        right: 12px;
+      }
+      .mouse {
+        width: 50px;
+        height: 21px;
+        border-top: 3px solid black;
+        overflow: hidden;
+        position: absolute;
+        top: 153px;
+        left: 78px;
+      }
+      .mouse:before {
+        content: "";
+        width: 100px;
+        height: 100px;
+        border: 3px solid black;
+        background-color: white;
+        border-radius: 10px;
+        transform: rotate(70deg);
+        position: absolute;
+        top: -103px;
+        left: -15px;
+      }
+      .handL {
+        width: 100px;
+        height: 100px;
+        border: 4px solid black;
+        border-radius: 15px;
+        transform: rotate(45deg);
+        position: absolute;
+        top: 155px;
+        left: -10px;
+        z-index: -1;
+      }
+      .handR {
+        width: 100px;
+        height: 100px;
+        border: 4px solid black;
+        border-radius: 15px;
+        transform: rotate(45deg);
+        position: absolute;
+        top: 155px;
+        right: -10px;
+        z-index: -1;
+      }
+      .footL {
+        width: 30px;
+        height: 50px;
+        background-color: black;
 
-        }
-        .yellowBody{
+        position: absolute;
+        bottom: -25px;
+        left: 70px;
+        z-index: -1;
+      }
+      .footR {
+        width: 30px;
+        height: 50px;
+        background-color: black;
 
-
-            width:202px;
-            height:340px;
-            border-radius:80px 80px 100px 100px;
-            overflow: hidden;
-            border:5px solid black;
-            background-color:#fbfe00;
-            position: absolute;
-        }
-        .hair{
-            width:120px;
-            height:100px;
-            border-top: 10px solid black;
-            transform:rotate(55deg);
-            border-radius:70px;
-            position:absolute;
-            top:-38px;
-            left:10px;
-            z-index: -1;
-        }
-        .hair:before{
-            content:'';
-            width:60px;
-            height:50px;
-            border-top: 8px solid black;
-            transform:rotate(-25deg);
-            border-radius:70px;
-            position:absolute;
-            top:-6px;
-            left:36px;
-        }
-        .eyesL{
-            width:50px;
-            height:50px;
-            border-radius:50%;
-            border:5px solid black;
-            background-color: white;
-            position:absolute;
-            top:55px;
-            left:40px;
-        }
-        .eyesR{
-            width:50px;
-            height:50px;
-            border-radius:50%;
-            border:5px solid black;
-            background-color: white;
-            position:absolute;
-            top:55px;
-            left:102px;
-        }
-        .eyesL:before{
-            content:'';
-            width:25px;
-            height:25px;
-            border-radius: 50%;
-            background-color: black;
-            position: absolute;·
-            top:12px;
-            left:12px;
-         }
-        .eyesR:before{
-            content:'';
-            width:25px;
-            height:25px;
-            border-radius: 50%;
-            background-color: black;
-            position: absolute;
-            top:12px;
-            right:12px;
-        }
-        .eyesL:after{
-            content:'';
-            width: 46px;
-            height:20px;
-            background-color: black;
-            transform:rotate(5deg);
-            position:absolute;
-            top:12px;
-            left:-46px;
-        }
-        .eyesR:after{
-            content:'';
-            width: 46px;
-            height:20px;
-            background-color: black;
-            transform:rotate(175deg);
-            position:absolute;
-            top:12px;
-            right:-46px;
-        }
-        .ball1{
-            content:'';
-            width:15px;
-            height:15px;
-            border-radius: 50%;
-            background-color: white;
-            position:absolute;
-            top:12px;
-            left:22px;
-        }
-        .ball2{
-            content:'';
-            width:15px;
-            height:15px;
-            border-radius: 50%;
-            background-color: white;
-            position:absolute;
-            top:12px;
-            right:12px;
-        }
-        .mouse{
-            width:50px;
-            height:21px;
-            border-top:3px solid black;
-            overflow: hidden;
-            position: absolute;
-            top:153px;
-            left:78px;
-        }
-        .mouse:before{
-            content:'';
-            width:100px;
-            height:100px;
-            border:3px solid black;
-            background-color: white;
-            border-radius:10px;
-            transform:rotate(70deg);
-            position:absolute;
-            top:-103px;
-            left:-15px;
-
-        }
-        .handL{
-            width:100px;
-            height:100px;
-            border:4px solid black;
-            border-radius:15px;
-            transform:rotate(45deg);
-            position:absolute;
-            top:155px;
-            left:-10px;
-            z-index: -1;
-        }
-        .handR{
-            width:100px;
-            height:100px;
-            border:4px solid black;
-            border-radius:15px;
-            transform:rotate(45deg);
-            position:absolute;
-            top:155px;
-            right:-10px;
-            z-index: -1;
-        }
-        .footL{
-            width:30px;
-            height:50px;
-            background-color: black;
-
-            position:absolute;
-            bottom:-25px;
-            left:70px;
-            z-index: -1;
-        }
-        .footR{
-            width:30px;
-            height:50px;
-            background-color: black;
-
-            position:absolute;
-            bottom:-25px;
-            right:70px;
-            z-index: -1;
-        }
-        .footL:after{
-            content:'';
-            width:50px;
-            height:25px;
-            border-radius:9px 0 9px 9px;
-            background-color: black;
-            position:absolute;
-            top:45px;
-            left:-20px;
-        }
-        .footR:after{
-            content:'';
-            width:50px;
-            height:25px;
-            border-radius: 0 9px 9px 9px;
-            background-color: black;
-            position:absolute;
-            top:45px;
-            right:-20px;
-        }
-        .clothes{
-            width:202px;
-            height:100px;
-            border-radius:0 0 95px 95px;
-            border-top:2px solid black;
-            background-color: blue;
-            position:absolute;
-            bottom:0px;
-        }
-        .clotheT{
-            width:120px;
-            height:48px;
-            background-color: blue;
-            border:5px solid black;
-            border-bottom:none;
-            position:absolute;
-            top:-53px;
-            left:38px;
-        }
-        .clotheT:before{
-            content:'';
-            width:76px;
-            height:10px;
-            background-color: blue;
-            border:3px solid black;
-            transform:rotate(45deg);
-            position:absolute;
-            top:-30px;
-            left:-60px;
-        }
-        .clotheT:after{
-            content:'';
-            width:76px;
-            height:10px;
-            background-color: blue;
-            border:3px solid black;
-            transform:rotate(135deg);
-            position:absolute;
-            top:-30px;
-            right:-60px;
-        }
-        .clotheB{
-            width:48px;
-            height:38px;
-            border:4px solid black;
-            border-radius:0 0 7px 7px;
-            position:absolute;
-            top:-13px;
-            left:75px;
-        }
-        .clotheB:after{
-            content:'';
-            width:5px;
-            height:52px;
-            background-color: black;
-            position:absolute;
-            top:58px;
-            left:21px;
-        }
+        position: absolute;
+        bottom: -25px;
+        right: 70px;
+        z-index: -1;
+      }
+      .footL:after {
+        content: "";
+        width: 50px;
+        height: 25px;
+        border-radius: 9px 0 9px 9px;
+        background-color: black;
+        position: absolute;
+        top: 45px;
+        left: -20px;
+      }
+      .footR:after {
+        content: "";
+        width: 50px;
+        height: 25px;
+        border-radius: 0 9px 9px 9px;
+        background-color: black;
+        position: absolute;
+        top: 45px;
+        right: -20px;
+      }
+      .clothes {
+        width: 202px;
+        height: 100px;
+        border-radius: 0 0 95px 95px;
+        border-top: 2px solid black;
+        background-color: blue;
+        position: absolute;
+        bottom: 0px;
+      }
+      .clotheT {
+        width: 120px;
+        height: 48px;
+        background-color: blue;
+        border: 5px solid black;
+        border-bottom: none;
+        position: absolute;
+        top: -53px;
+        left: 38px;
+      }
+      .clotheT:before {
+        content: "";
+        width: 76px;
+        height: 10px;
+        background-color: blue;
+        border: 3px solid black;
+        transform: rotate(45deg);
+        position: absolute;
+        top: -30px;
+        left: -60px;
+      }
+      .clotheT:after {
+        content: "";
+        width: 76px;
+        height: 10px;
+        background-color: blue;
+        border: 3px solid black;
+        transform: rotate(135deg);
+        position: absolute;
+        top: -30px;
+        right: -60px;
+      }
+      .clotheB {
+        width: 48px;
+        height: 38px;
+        border: 4px solid black;
+        border-radius: 0 0 7px 7px;
+        position: absolute;
+        top: -13px;
+        left: 75px;
+      }
+      .clotheB:after {
+        content: "";
+        width: 5px;
+        height: 52px;
+        background-color: black;
+        position: absolute;
+        top: 58px;
+        left: 21px;
+      }
     </style>
-</head>
-<body>
-<div class="wrap">
-    <div class="hair"></div>
-    <div class="yellowBody">
-
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="hair"></div>
+      <div class="yellowBody">
         <div class="eyesL">
-        <div class="ball1"></div>
-    </div>
+          <div class="ball1"></div>
+        </div>
         <div class="eyesR">
-            <div class="ball2"></div>
+          <div class="ball2"></div>
         </div>
         <div class="mouse"></div>
         <div class="clothes">
-            <div class="clotheT"></div>
-            <div class="clotheB"></div>
+          <div class="clotheT"></div>
+          <div class="clotheB"></div>
         </div>
+      </div>
+      <div class="handL"></div>
+      <div class="handR"></div>
+      <div class="footL"></div>
+      <div class="footR"></div>
     </div>
-    <div class="handL"></div>
-    <div class="handR"></div>
-    <div class="footL"></div>
-    <div class="footR"></div>
-</div>
-</body>
+  </body>
 </html>
