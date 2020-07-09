@@ -19,7 +19,18 @@
   <body>
     <div id="app">
       <el-container>
-        <el-header style="height: 300px;"> </el-header>
+        <el-header
+          style="
+            height: 300px;
+            padding-top: 150px;
+            font-size: 50px;
+            color: white;
+            font-weight: bold;
+            line-height: 150px;
+          "
+        >
+          一 些 简 单 的 小 玩 意 儿
+        </el-header>
         <el-main>
           <el-tabs v-model="activeName" @tab-click="showMain">
             <el-tab-pane label="*小黄人*" name="first">
