@@ -1,11 +1,144 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>有趣的小玩意儿</title>
-</head>
-<body>
-    <a href="/小黄人"></a>
-</body>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- import CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"
+    />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <style>
+    #app {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+  <body>
+    <div id="app">
+      <el-container>
+        <el-header style="height: 300px;"> </el-header>
+        <el-main>
+          <el-tabs v-model="activeName" @tab-click="showMain">
+            <el-tab-pane label="*小黄人*" name="first">
+              <div class="yellow-wrap">
+                <div class="hair"></div>
+                <div class="yellowBody">
+                  <div class="eyesL">
+                    <div class="ball1"></div>
+                  </div>
+                  <div class="eyesR">
+                    <div class="ball2"></div>
+                  </div>
+                  <div class="mouse"></div>
+                  <div class="clothes">
+                    <div class="clotheT"></div>
+                    <div class="clotheB"></div>
+                  </div>
+                </div>
+                <div class="handL"></div>
+                <div class="handR"></div>
+                <div class="footL"></div>
+                <div class="footR"></div>
+              </div>
+            </el-tab-pane>
+            <el-tab-pane label="*哆啦A梦*" name="second">
+              <div class="dlam">
+                <div class="head">
+                  <div class="face"></div>
+                  <div class="eyes1"></div>
+                  <div class="eyes2"></div>
+                  <div class="nose"></div>
+                  <div class="mouse"></div>
+                  <div class="huzi1"></div>
+                  <div class="huzi2"></div>
+                </div>
+                <div class="bodyB">
+                  <div class="handL"></div>
+                  <div class="handR"></div>
+                  <div class="dupi"></div>
+                  <div class="cover"></div>
+                  <div class="Bot"></div>
+                  <div class="feet"></div>
+                </div>
+                <div class="collar">
+                  <div class="ring">
+                    <div class="line1"></div>
+                  </div>
+                </div>
+              </div>
+            </el-tab-pane>
+            <el-tab-pane label="*小狗*" name="third">
+              <div class="dog">
+                <div class="ear">
+                  <div class="ear1"></div>
+                  <div class="ear2"></div>
+                </div>
+                <div class="dogBody">
+                  <div class="eye"></div>
+                  <div class="nose"></div>
+                  <div class="beard">
+                    <div class="mouse">
+                      <div class="tongue"></div>
+                    </div>
+                  </div>
+                  <div class="collar">
+                    <div class="ball">
+                      <div class="ball1"></div>
+                      <div class="ball2"></div>
+                      <div class="ball3"></div>
+                      <div class="ball4"></div>
+                      <div class="ball5"></div>
+                      <div class="ball6"></div>
+                    </div>
+                    <div class="bigball"></div>
+                    <div class="line"></div>
+                  </div>
+                  <div class="dupi"></div>
+                  <div class="white1"></div>
+                  <div class="legL"></div>
+                  <div class="legR"></div>
+                </div>
+
+                <div class="tail"></div>
+                <div class="white1"></div>
+              </div>
+            </el-tab-pane>
+            <el-tab-pane label="广告位招租" name="fourth"
+              ><p style="font-size: 30px; line-height: 200px;">
+                联系电话 123-1234-1234
+              </p></el-tab-pane
+            >
+          </el-tabs>
+        </el-main>
+      </el-container>
+    </div>
+  </body>
+  <!-- import Vue before Element -->
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <!-- import JavaScript -->
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  <script>
+    new Vue({
+      el: "#app",
+      data: function () {
+        return {
+          activeName: "",
+        };
+      },
+      created() {
+        this.activeName = "first";
+      },
+      methods: {
+        showMain: function (index) {
+          console.log(index);
+          switch (index) {
+            case "1":
+          }
+        },
+      },
+    });
+  </script>
 </html>
